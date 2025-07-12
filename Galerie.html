@@ -130,6 +130,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            position: relative; /* For mobile menu positioning */
         }
         
         .logo {
@@ -139,7 +140,7 @@
         }
         
         .logo img {
-            height: 60px;
+            height: 40px;
         }
         
         .logo-text {
@@ -147,7 +148,7 @@
         }
         
         .logo-text h1 {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--secondary);
             line-height: 1.2;
         }
@@ -207,8 +208,6 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            position: absolute;
-            right: 0;
         }
         
         /* Hero Section */
@@ -746,15 +745,16 @@
                 margin-top: 5px;
             }
             
-            /* Header changes */
+            /* Header changes - Reduced by 50% */
             .header-content {
+                padding: 8px 0; /* Reduced from 15px */
                 flex-wrap: wrap;
             }
             
             nav {
                 order: 3;
                 width: 100%;
-                margin-top: 20px;
+                margin-top: 15px; /* Reduced from 20px */
                 display: none;
             }
             
@@ -764,15 +764,39 @@
             
             nav ul {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px; /* Reduced from 10px */
             }
             
             .mobile-menu-btn {
                 display: block;
+                font-size: 22px; /* Slightly reduced */
+            }
+            
+            /* NEW: Align buttons in a flex container */
+            .header-buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                order: 2;
+            }
+            
+            .logo {
+                order: 0;
+                flex: 1; /* Take available space */
             }
             
             .nav-btns {
-                margin-left: auto;
+                order: 1;
+                margin-left: 0; /* Remove auto margin */
+            }
+            
+            .logo-text h1 {
+                font-size: 18px; /* Reduced from 24px */
+            }
+            
+            .nav-btns .btn {
+                padding: 6px 15px; /* Reduced from 8px 20px */
+                font-size: 12px; /* Reduced from 14px */
             }
             
             .page-hero {
@@ -833,6 +857,20 @@
                 min-width: 50px;
                 font-size: 11px;
             }
+            
+            /* Additional header reduction for smallest screens */
+            .header-content {
+                padding: 6px 0;
+            }
+            
+            .logo-text h1 {
+                font-size: 16px;
+            }
+            
+            .nav-btns .btn {
+                padding: 5px 12px;
+                font-size: 11px;
+            }
         }
         
         .custom-logo { 
@@ -872,8 +910,13 @@
                 </div>
             </div>
             
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <div class="header-buttons">
+                <div class="nav-btns">
+                    <a href="contact 2.html" class="btn">Réservation</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
             
             <nav id="main-nav">
@@ -887,11 +930,6 @@
                     <li><a href="contact 2.html">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="nav-btns">
-                <a href="contact 2.html" class="btn">Réservation</a>
-                
-            </div>
         </div>
     </header>
 
@@ -971,7 +1009,14 @@
                         <p>Le summum de la vue</p>
                     </div>
                 </div>
-                
+                  <!-- Image 1 -->
+                <div class="gallery-item" data-category="Chambres">
+                    <img src="ftouch2.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Chambre Deluxe</h3>
+                        <p>Vue imprenable sur la ville de Douala</p>
+                    </div>
+                </div>
                 <!-- Image 6 -->
                 <div class="gallery-item" data-category="Événements">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Salle de Réception">
