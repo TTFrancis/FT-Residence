@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="biggerft-favicon.png">
+    <link rel="shortcut icon" type="image/png" href="biggerft-favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-Residence Douala - FT-Lounge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #D4AF37;
+            --light: #F8F5F0;
+            --dark: #333333;
+            --gray: #777777;
+            --light-gray: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-light {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .logo-text {
+            text-align: center;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a.active:after {
+            width: 100%;
+        }
+        
+        .nav-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-btns .btn {
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('ftft.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-hero-content {
+            width: 100%;
+        }
+        
+        .page-hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .page-hero-content p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: #ccc;
+        }
+        
+        /* About Restaurant */
+        .restaurant-about {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .feature i {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .menu-category {
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .menu-category.active, .menu-category:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            transition: all 0.4s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .menu-item.hidden {
+            display: none;
+        }
+        
+        .menu-item.animate-out {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .menu-image {
+            width: 40%;
+            overflow: hidden;
+        }
+        
+        .menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .menu-item:hover .menu-image img {
+            transform: scale(1.05);
+        }
+        
+        .menu-content {
+            width: 60%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .menu-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        
+        .menu-price {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .menu-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .menu-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .menu-tag {
+            background: rgba(139, 69, 19, 0.1);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Counter Styles */
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .counter {
+            margin: 0 5px;
+            font-weight: 700;
+        }
+        
+        /* Filter Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .menu-item.animate-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Chef Section */
+        .chef-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .chef-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .chef-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .chef-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .chef-content {
+            flex: 1;
+        }
+        
+        .chef-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .chef-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .chef-content p {
+            margin-bottom: 20px;
+        }
+        
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .signature:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        /* Reservation */
+        .reservation {
+            padding: 100px 0;
+            background: var(--light);
+        }
+        
+        .reservation-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .reservation-form {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .reservation-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .reservation-info {
+            flex: 1;
+        }
+        
+        .reservation-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item i {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+        
+        /* Gallery */
+        .gallery-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 69, 19, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 30px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 5rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container, .chef-container, .reservation-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .chef-image {
+                order: -1;
+            }
+            
+            .menu-image {
+                width: 30%;
+            }
+            
+            .menu-content {
+                width: 70%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Top Bar Changes for Mobile Only */
+            .top-bar-content {
+                flex-direction: column;
+                align-items: flex-start; /* Align to left */
+                gap: 15px; /* Add more gap between rows */
+            }
+            
+            .contact-info {
+                flex-direction: column; /* Stack contact info vertically */
+                gap: 10px;
+            }
+            
+            .social-icons {
+                margin-top: 5px;
+            }
+            
+            /* Existing mobile styles */
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-btns {
+                margin-left: auto;
+            }
+            
+            .page-hero {
+                height: 60vh;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+            }
+            
+            .menu-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .menu-content {
+                width: 100%;
+                padding: 25px;
+                gap: 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .menu-categories {
+                gap: 8px;
+            }
+            
+            .menu-category {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .custom-logo { 
+            height: 60px;
+            width: 0 auto;
+            margin: 0 auto;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +237 675 00 47 43</span>
+                <span><i class="fas fa-envelope"></i> ftresidence69@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577747315327"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ft.residence/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/FT_Residence"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ft_residence"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <img src="FT_ lets .png" 
+                         alt="FT-Residence" 
+                         class="custom-logo">
+                        <h1>FT-Residence</h1>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="restart.html">Accueil</a></li>
+                    <li><a href="Chambre.html">Chambres</a></li>
+                    <li><a href="ft-lounge.html" class="active">FT-Lounge</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="Galerie.html">Gallerie</a></li>
+                    <li><a href="contact 2.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-btns">
+                <a href="contact 2.html" class="btn">Réservation</a>
+                <button class="btn"><i class="fas fa-globe"></i> FR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>FT-Lounge</h1>
+            <p>Une expérience euphotique exceptionnelle au cœur de Douala</p>
+            <div class="breadcrumb">
+                <a href="restart.html">Accueil</a>
+                <span>/</span>
+                <span>Restaurant</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Restaurant -->
+    <section class="restaurant-about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Philosophie de breuvage</h2>
+                <p>Découvrez l'art de la consommation alliant tradition et innovation</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Excellent élixirs</h3>
+                    <p>Le FT-lounge incarne l'essence de la haute Boissons camerounaise revisitée. Notre bartender, formé aux meilleures écoles de Breuvage internationales, crée des cocktails qui célèbrent les saveurs locales tout en intégrant des techniques innovantes.</p>
+                    <p>Dans un cadre élégant et raffiné, nous vous proposons une expérience sensorielle unique où chaque détail a été pensé pour émerveiller votre corps et éveiller vos sens.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-seedling"></i>
+                            <div>
+                                <h4>Produits Frais & Locaux</h4>
+                                <p>Approvisionnement quotidien auprès des producteurs locaux</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <div>
+                                <h4>Carte des Vins Exclusifs</h4>
+                                <p>Sélection de crus exceptionnels des meilleurs vignobles</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>Menu Signature</h4>
+                                <p>Créations uniques de notre chef étoilé</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-moon"></i>
+                            <div>
+                                <h4>Dîner aux Chandelles</h4>
+                                <p>Ambiance romantique en soirée</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="ftftft.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Carte de Boissons</h2>
+                <p>Découvrez nos créations breuvages signatures</p>
+            </div>
+            
+            <div class="menu-categories">
+                <button class="menu-category active" data-category="tout">Tout</button>
+                <button class="menu-category" data-category="whisky">Whisky</button>
+                <button class="menu-category" data-category="vodka">Vodka</button>
+                <button class="menu-category" data-category="wine">Wine</button>
+                <button class="menu-category" data-category="brasserie">Brasserie</button>
+                <button class="menu-category" data-category="cocktail">Cocktails</button>
+                <button class="menu-category" data-category="champagne">Champagne</button>
+            </div>
+            
+            <div class="counter-container">
+                <span id="drink-count">7</span> boissons disponibles
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Wine -->
+                <div class="menu-item animate-in" data-category="wine">
+                    <div class="menu-image">
+                        <img src="Red wine.jfif">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Vin Rouge</h3>
+                            <div class="menu-price">29.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Vin rouge de la Vallée du Rhône, notes de fruits rouges et d'épices douces</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Signature</span>
+                            <span class="menu-tag">Vin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wine -->
+                <div class="menu-item animate-in" data-category="wine">
+                    <div class="menu-image">
+                        <img src="de wine.jfif">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Vin Blanc</h3>
+                            <div class="menu-price">19.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Vin blanc de Bourgogne, arômes d'agrumes et de fleurs blanches</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Spécialité</span>
+                            <span class="menu-tag">Vin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Whisky -->
+                <div class="menu-item animate-in" data-category="whisky">
+                    <div class="menu-image">
+                        <img src="de whis.jfif">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Single Malt Whisky</h3>
+                            <div class="menu-price">49.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Whisky écossais vieilli 18 ans, aux notes de tourbe et de fruits secs</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Premium</span>
+                            <span class="menu-tag">Whisky</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Champagne -->
+                <div class="menu-item animate-in" data-category="champagne">
+                    <div class="menu-image">
+                        <img src="de champ.jfif">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Champagne Brut</h3>
+                            <div class="menu-price">69.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Champagne français brut, bulles fines et arômes de fruits blancs</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Luxe</span>
+                            <span class="menu-tag">Champagne</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vodka -->
+                <div class="menu-item animate-in" data-category="vodka">
+                    <div class="menu-image">
+                        <img src="Vodka.jfif">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Vodka Premium</h3>
+                            <div class="menu-price">29.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Vodka polonaise filtrée au charbon de bois, texture onctueuse</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Premium</span>
+                            <span class="menu-tag">Vodka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail -->
+                <div class="menu-item animate-in" data-category="cocktail">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Cocktail Signature</h3>
+                            <div class="menu-price">3.499 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Mélange exclusif de rhum, fruits tropicaux et épices locales</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Signature</span>
+                            <span class="menu-tag">Cocktail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brasserie -->
+                <div class="menu-item animate-in" data-category="brasserie">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80">
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h3>Bière Artisanale</h3>
+                            <div class="menu-price">1.999 FCFA</div>
+                        </div>
+                        <div class="menu-description">
+                            <p>Bière blonde locale brassée selon des méthodes traditionnelles</p>
+                        </div>
+                        <div class="menu-tags">
+                            <span class="menu-tag">Locale</span>
+                            <span class="menu-tag">Brasserie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="chef-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre DJ Éxpert</h2>
+                <p>Rencontrez l'artisan de nos créations Musicales</p>
+            </div>
+            
+            <div class="chef-container">
+                <div class="chef-image">
+                    <img src="djdj.jfif">
+                </div>
+                
+                <div class="chef-content">
+                    <h2>DJ Penda</h2>
+                    <h3>Maître DJ En Mixtape</h3>
+                    <p>Le DJ Penda a parcouru le monde pendant 15 ans avant de revenir à ses racines camerounaises. Son parcours l'a mené dans les plus slles de Paris, Tokyo et New York, où il a affiné son art.</p>
+                    <p>"Mes beats son un hommage aux produits exceptionnels de notre terroir camerounais. J'aime réinventer les musique traditionnelles avec une touche contemporaine, créant ainsi une expérience auditif unique qui raconte notre histoire."</p>
+                    <p>En 2022, DJ a été reconnu comme un des "Meilleur DJ d'Afrique Centrale" par le Guide musicale International.</p>
+                    <div class="signature">DJ Penda</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation -->
+    <section class="reservation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Réservez Votre Place</h2>
+                <p>Garantissez votre expérience de consommation inoubliable</p>
+            </div>
+            
+            <div class="reservation-container">
+                <div class="reservation-form">
+                    <h3>Demande de Réservation</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom Complet *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Nombre de Personnes *</label>
+                                <select id="guests" required>
+                                    <option value="1">1 Personne</option>
+                                    <option value="2">2 Personnes</option>
+                                    <option value="3">3 Personnes</option>
+                                    <option value="4">4 Personnes</option>
+                                    <option value="5">5 Personnes</option>
+                                    <option value="6">6 Personnes</option>
+                                    <option value="7">7+ Personnes</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Heure *</label>
+                                <select id="time" required>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requests">Demandes Spéciales</label>
+                            <textarea id="requests" placeholder="Allergies, anniversaire, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Réserver Maintenant</button>
+                    </form>
+                </div>
+                
+                <div class="reservation-info">
+                    <h3>Informations Pratiques</h3>
+                    
+                    <div class="info-box">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horaires d'Ouverture</h4>
+                                <p>Lundi-Vendredi: 16h00 - 02h00</p>
+                                <p>Samedi-Dimanche: 14h00 - 04h00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-glass-cheers"></i>
+                            <div>
+                                <h4>Happy Hour</h4>
+                                <p>Tous les jours de 16h à 19h: 25% de réduction sur tous les cocktails</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-music"></i>
+                            <div>
+                                <h4>Soirées Spéciales</h4>
+                                <p>Vendredi et samedi soir: DJ live et ambiance exclusive</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>Pour les grandes occasions</h4>
+                        <p>Nous proposons des réservations VIP pour célébrer vos événements spéciaux. Contactez-nous pour organiser une soirée privée ou une réception.</p>
+                        <div class="contact-cta" style="margin-top: 20px;">
+                            <a href="tel:+237675004743" class="btn">
+                                <i class="fas fa-phone"></i> +237 675 00 47 43
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Univers rafraîchissements</h2>
+                <p>Un voyage visuel à travers nos créations</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1257&q=80">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="De cock.jfif">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="baileys.jfif">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Chivas.jfif">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="veuve 22.jfif">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Spirit Selects I on Behance.jfif">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ce Que Disent Nos Clients</h2>
+                <p>Découvrez les témoignages de nos convives</p>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Une expérience gastronomique exceptionnelle ! Le carpaccio de bœuf Wagyu était divin, et le service impeccable. L'ambiance raffinée et la vue sur le jardin créent une atmosphère magique. Nous reviendrons certainement pour découvrir le menu dégustation."</p>
+                    
+                    <div class="client">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie Dupont">
+                        </div>
+                        <div class="client-info">
+                            <h4>Sophie Dupont</h4>
+                            <span>Paris, France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>FT-Residence</h3>
+                    <p>L'établissement de référence à Douala pour un séjour d'exception alliant luxe, confort et service personnalisé.</p>
+                    <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577747315327"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ft.residence/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/FT_Residence"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ft_residence"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="rooms.html">Chambres & Suites</a></li>
+                        <li><a href="restaurant.html">Restaurant</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Spa & Bien-être</a></li>
+                        <li><a href="#">Centre d'Affaires</a></li>
+                        <li><a href="#">Salles d'Événements</a></li>
+                        <li><a href="#">Piscine</a></li>
+                        <li><a href="#">Service de Navette</a></li>
+                        <li><a href="#">Service en Chambre 24h/24</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Fin Goudron Bangue, Kotto</li>
+                        <li><i class="fas fa-phone"></i> +237 675 00 47 43</li>
+                        <li><i class="fas fa-envelope"></i> ftresidence69@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 FT-Residence Douala. Tous droits réservés. | Conçu avec <i class="fas fa-heart"></i> pour votre confort</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Form date min attribute
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        document.getElementById('date').min = formattedDate;
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+        
+        // Drink Filtering Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.menu-category');
+            const drinkItems = document.querySelectorAll('.menu-item');
+            const drinkCountElement = document.getElementById('drink-count');
+            
+            // Initialize drink count
+            drinkCountElement.textContent = drinkItems.length;
+            
+            // Add click event to each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-category');
+                    
+                    // Filter drinks
+                    let visibleCount = 0;
+                    
+                    drinkItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        // First add animation class for fade out effect
+                        item.classList.add('animate-out');
+                        
+                        // After a short delay, hide or show the item
+                        setTimeout(() => {
+                            if (filterValue === 'tout' || itemCategory === filterValue) {
+                                item.classList.remove('hidden');
+                                item.classList.remove('animate-out');
+                                item.classList.add('animate-in');
+                                visibleCount++;
+                            } else {
+                                item.classList.add('hidden');
+                                item.classList.remove('animate-in');
+                            }
+                        }, 300);
+                    });
+                    
+                    // Update drink counter
+                    setTimeout(() => {
+                        drinkCountElement.textContent = visibleCount;
+                    }, 350);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
