@@ -1312,28 +1312,30 @@
             </div>
             
             <div class="reservation-container">
+            
                 <div class="reservation-form">
                     <h3>Demande de Réservation</h3>
-                    <form>
+                    <form id="contactForm" action="https://formspree.io/f/xeokbkar" method="POST">
+                    <div id="formMessages"></div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Nom Complet *</label>
-                                <input type="text" id="name" required>
+                                <label for="name">Nom Complet </label>
+                                <input type="text" name="name" id="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" required>
+                                <label for="email">Email </label>
+                                <input type="email" name="email" id="email" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="phone">Téléphone *</label>
-                                <input type="tel" id="phone" required>
+                                <label for="phone">Téléphone </label>
+                                <input type="tel" name="phone" id="phone" required>
                             </div>
                             <div class="form-group">
-                                <label for="guests">Nombre de Personnes *</label>
-                                <select id="guests" required>
+                                <label for="guests">Nombre de Personnes </label>
+                                <select name="guests" id="guests" required>
                                     <option value="1">1 Personne</option>
                                     <option value="2">2 Personnes</option>
                                     <option value="3">3 Personnes</option>
@@ -1347,12 +1349,12 @@
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="date">Date *</label>
-                                <input type="date" id="date" required>
+                                <label for="date">Date </label>
+                                <input type="date" name="date" id="date" required>
                             </div>
                             <div class="form-group">
-                                <label for="time">Heure *</label>
-                                <select id="time" required>
+                                <label for="time">Heure </label>
+                                <select name="time" id="time" required>
                                     <option value="12:00">12:00</option>
                                     <option value="12:30">12:30</option>
                                     <option value="13:00">13:00</option>
@@ -1368,7 +1370,7 @@
                         
                         <div class="form-group">
                             <label for="requests">Demandes Spéciales</label>
-                            <textarea id="requests" placeholder="Allergies, anniversaire, etc."></textarea>
+                            <textarea name="requests" id="requests" placeholder="Allergies, anniversaire, etc."></textarea>
                         </div>
                         
                         <button type="submit" class="btn">Réserver Maintenant</button>

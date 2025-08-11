@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Only changed the order of elements in the header-buttons container */
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            order: 2;
+            flex-direction: row-reverse; /* This reverses the order of children */
+        }
+        
+        /* Original styles preserved below */
         :root {
             --primary: #8B4513;
             --secondary: #D4AF37;
@@ -772,7 +782,6 @@
                 font-size: 22px; /* Slightly reduced */
             }
             
-            /* NEW: Align buttons in a flex container */
             .header-buttons {
                 display: flex;
                 align-items: center;
@@ -911,6 +920,7 @@
             </div>
             
             <div class="header-buttons">
+                <!-- Reservation button moved before mobile menu button -->
                 <div class="nav-btns">
                     <a href="contact 2.html" class="btn">Réservation</a>
                 </div>
@@ -1009,7 +1019,7 @@
                         <p>Le summum de la vue</p>
                     </div>
                 </div>
-                  <!-- Image 1 -->
+                  <!-- Image 6 -->
                 <div class="gallery-item" data-category="Chambres">
                     <img src="ftouch2.jpg">
                     <div class="gallery-overlay">
@@ -1017,16 +1027,16 @@
                         <p>Vue imprenable sur la ville de Douala</p>
                     </div>
                 </div>
-                <!-- Image 6 -->
+                <!-- Image 7 -->
                 <div class="gallery-item" data-category="Événements">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Salle de Réception">
+                    <img src="ftouch1.jpg">
                     <div class="gallery-overlay">
                         <h3>Salle de Réception</h3>
                         <p>Événements et célébrations</p>
                     </div>
                 </div>
                 
-                <!-- Image 7 -->
+                <!-- Image 8 -->
                 <div class="gallery-item" data-category="Restaurant">
                     <img src="fttt.jpg">
                     <div class="gallery-overlay">
@@ -1035,7 +1045,7 @@
                     </div>
                 </div>
                 
-                <!-- Image 8 -->
+                <!-- Image 9 -->
                 <div class="gallery-item" data-category="Lounge">
                     <img src="ftft.jpg">
                     <div class="gallery-overlay">
@@ -1043,7 +1053,7 @@
                         <p>Massage aux huiles essentielles</p>
                     </div>
                 </div>
-                <!-- Image 9 -->
+                <!-- Image 10 -->
                 <div class="gallery-item" data-category="Toillete">
                     <img src="toilet.jpg">
                     <div class="gallery-overlay">
@@ -1051,7 +1061,7 @@
                         <p>Espace aux huiles essentielles</p>
                     </div>
                 </div>
-                <!-- Image 10 -->
+                <!-- Image 11 -->
                 <div class="gallery-item" data-category="Cuisine">
                     <img src="cuisine1.jpg">
                     <div class="gallery-overlay">
@@ -1059,7 +1069,7 @@
                         <p>Espace de cuisine essentielles</p>
                     </div>
                 </div>
-                <!-- Image 11 -->
+                <!-- Image 12 -->
                 <div class="gallery-item" data-category="Toillete">
                     <img src="toilet2.jpg">
                     <div class="gallery-overlay">
@@ -1067,7 +1077,7 @@
                         <p>Espace aux huiles essentielles</p>
                     </div>
                 </div>
-                <!-- Image 10 -->
+                <!-- Image 13 -->
                 <div class="gallery-item" data-category="Cuisine">
                     <img src="cuisine2.jpg">
                     <div class="gallery-overlay">
@@ -1170,7 +1180,7 @@
                 </div>
                 
                 <div class="instagram-item">
-                    <img src="ftouch2.jpg">
+                    <img src="fttouch2.jpg">
                     <div class="instagram-overlay">
                         <i class="fab fa-instagram"></i>
                     </div>

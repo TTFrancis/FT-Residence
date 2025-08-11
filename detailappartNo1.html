@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="biggerft-favicon.png">
+    <link rel="shortcut icon" type="image/png" href="biggerft-favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-Residence Douala - Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Only changed the order of elements in the header-buttons container */
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            order: 2;
+            flex-direction: row-reverse; /* This reverses the order of children */
+        }
+        
+        /* Original styles preserved below */
+        :root {
+            --primary: #8B4513;
+            --secondary: #D4AF37;
+            --light: #F8F5F0;
+            --dark: #333333;
+            --gray: #777777;
+            --light-gray: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-light {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative; /* For mobile menu positioning */
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            text-align: center;
+        }
+        
+        .logo-text h1 {
+            font-size: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a.active:after {
+            width: 100%;
+        }
+        
+        .nav-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-btns .btn {
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('galwel.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-hero-content {
+            width: 100%;
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: #ccc;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-category {
+            padding: 10px 25px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-category.active, .gallery-category:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Video Tour */
+        .video-tour {
+            padding: 80px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+        
+        /* Video Controls */
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 10;
+        }
+        
+        .video-container:hover .video-controls {
+            transform: translateY(0);
+        }
+        
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s;
+        }
+        
+        .control-btn:hover {
+            color: var(--secondary);
+        }
+        
+        .progress-container {
+            flex-grow: 1;
+            height: 5px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 3px;
+            width: 0%;
+        }
+        
+        .volume-container {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .volume-slider {
+            width: 80px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .pause-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-container:hover .pause-btn {
+            opacity: 1;
+        }
+        
+        .pause-btn.visible {
+            display: flex;
+        }
+        
+        /* Time Display */
+        .time-display {
+            color: white;
+            font-size: 14px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        /* Instagram Feed */
+        .instagram-feed {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .instagram-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .instagram-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 69, 19, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .instagram-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+        
+        .instagram-overlay i {
+            color: white;
+            font-size: 30px;
+        }
+        
+        /* Booking Banner */
+        .booking-banner {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .booking-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .booking-banner p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 5px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav button {
+            background: rgba(255,255,255,0.3);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-nav button:hover {
+            background: var(--secondary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Top Bar Mobile Changes */
+            .top-bar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 10px 0;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+            
+            .contact-info span {
+                font-size: 13px;
+            }
+            
+            .social-icons {
+                margin-top: 5px;
+            }
+            
+            /* Header changes - Reduced by 50% */
+            .header-content {
+                padding: 8px 0; /* Reduced from 15px */
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px; /* Reduced from 20px */
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px; /* Reduced from 10px */
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                font-size: 22px; /* Slightly reduced */
+            }
+            
+            .header-buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                order: 2;
+            }
+            
+            .logo {
+                order: 0;
+                flex: 1; /* Take available space */
+            }
+            
+            .nav-btns {
+                order: 1;
+                margin-left: 0; /* Remove auto margin */
+            }
+            
+            .logo-text h1 {
+                font-size: 18px; /* Reduced from 24px */
+            }
+            
+            .nav-btns .btn {
+                padding: 6px 15px; /* Reduced from 8px 20px */
+                font-size: 12px; /* Reduced from 14px */
+            }
+            
+            .page-hero {
+                height: 50vh;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-categories {
+                gap: 10px;
+            }
+            
+            .gallery-category {
+                padding: 8px 15px;
+            }
+            
+            /* Responsive video controls */
+            .volume-slider {
+                width: 50px;
+            }
+            
+            .time-display {
+                min-width: 60px;
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Mobile video controls */
+            .video-controls {
+                padding: 8px 10px;
+            }
+            
+            .control-btn {
+                font-size: 16px;
+                padding: 5px;
+            }
+            
+            .volume-slider {
+                width: 40px;
+            }
+            
+            .time-display {
+                min-width: 50px;
+                font-size: 11px;
+            }
+            
+            /* Additional header reduction for smallest screens */
+            .header-content {
+                padding: 6px 0;
+            }
+            
+            .logo-text h1 {
+                font-size: 16px;
+            }
+            
+            .nav-btns .btn {
+                padding: 5px 12px;
+                font-size: 11px;
+            }
+        }
+        
+        .custom-logo { 
+            height: 60px;
+            width: 0 auto ;
+            margin: 0 auto;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +237 675 00 47 43</span>
+                <span><i class="fas fa-envelope"></i> ftresidence69@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577747315327"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ft.residence/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/FT_Residence"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ft_residence"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <img src="FT_ lets .png" 
+                         alt="FT-Residence" 
+                         class="custom-logo">
+                        <h1>FT-Residence</h1>
+                </div>
+            </div>
+            
+            <div class="header-buttons">
+                <!-- Reservation button moved before mobile menu button -->
+                <div class="nav-btns">
+                    <a href="contact 2.html" class="btn">Réservation</a>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    
+                    <li><a href="Chambre.html">Chambres</a></li>
+                    <li><a href="ft-lounge.html">FT-Lounge</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="Galerie.html" class="active">Gallerie</a></li>
+                    <li><a href="contact 2.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>Appartement H.S</h1>
+            <div class="breadcrumb">
+                <a href="restart.html">Accueil</a>
+                <span>/</span>
+                <span>Galerie</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Découvrez Notre Univers</h2>
+                <p>Explorez les espaces élégants et les expériences exceptionnelles du FT-Residence Douala</p>
+            </div>
+            
+            <div class="gallery-categories">
+                <button class="gallery-category active">Tout</button>
+                <button class="gallery-category">Salon</button>
+                <button class="gallery-category">Chambres</button>
+                <button class="gallery-category">Cuisine</button>
+                <button class="gallery-category">Toillete</button>
+                <button class="gallery-category">Extérieurs</button>
+            </div>
+            
+            <div class="gallery-grid">
+                 <!-- Image 1 -->
+                <div class="gallery-item" data-category="Salon">
+                    <img src="sofa.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Salon</h3>
+                        <p>Détente et bien-être</p>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="gallery-item" data-category="Salon">
+                    <img src="table.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Tablet a diner</h3>
+                        <p>Oasis de confort</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item" data-category="Chambres">
+                    <img src="1stroom.jpg">
+                    <div class="gallery-overlay">
+                        <h3>No.1 Chambre Deluxe</h3>
+                        <p>Vue imprenable sur la ville de Douala</p>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="gallery-item" data-category="Chambres">
+                    <img src="2ndroom.jpg">
+                    <div class="gallery-overlay">
+                        <h3>No.2 Chambre Deluxe</h3>
+                        <p>Vue imprenable sur la ville de Douala</p>
+                    </div>
+                </div>
+                
+               
+                  <!-- Image 5 -->
+                <div class="gallery-item" data-category="Cuisine">
+                    <img src="kitchen.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Cuisine Equipe</h3>
+                        <p>Tout le necessaire</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item" data-category="Cuisine">
+                    <img src="kitchen2.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Cuisine Equipe</h3>
+                        <p>Tout le necessaire</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item" data-category="Toillete">
+                    <img src="1sttoilet.jpg">
+                    <div class="gallery-overlay">
+                        <h3>No.1 Toillete</h3>
+                        <p>Espace aux huiles essentielles</p>
+                    </div>
+                </div>
+                
+                <!-- Image 8 -->
+                <div class="gallery-item" data-category="Toillete">
+                    <img src="2ndtoilet.jpg">
+                    <div class="gallery-overlay">
+                        <h3>No.2 Toillete</h3>
+                        <p>Espace aux huiles essentielles</p>
+                    </div>
+                </div>
+                
+                <!-- Image 9 -->
+                <div class="gallery-item" data-category="Toillete">
+                    <img src="guesttoilet.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Toillete des invites</h3>
+                        <p>Espace aux huiles essentielles</p>
+                    </div>
+                </div>
+                 <!-- Image 10 -->
+                <div class="gallery-item" data-category="Extérieurs">
+                    <img src="balcony.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Balcon</h3>
+                        <p>Le summum de la vue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tour -->
+    <section class="video-tour">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visite Virtuelle</h2>
+                <p>Découvrez notre établissement à travers cette visite exclusive</p>
+            </div>
+            
+            <div class="video-container">
+                <video id="tourVideo" poster="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+                    <source src="ftvideo.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+                <div class="video-overlay" id="videoOverlay">
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="pause-btn" id="pauseBtn">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <div class="video-controls">
+                    <button class="control-btn play-pause" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+                    <div class="volume-container">
+                        <button class="control-btn volume-btn" id="volumeBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" min="0" max="1" step="0.1" value="1" class="volume-slider" id="volumeSlider">
+                    </div>
+                    <button class="control-btn fullscreen-btn" id="fullscreenBtn">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-feed">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Instagram</h2>
+                <p>Suivez-nous pour découvrir notre quotidien</p>
+                <a href="https://www.instagram.com/ft.residence/" class="btn" style="margin-top: 20px;">
+                    <i class="fab fa-instagram"></i> @FT-Residence
+                </a>
+            </div>
+            
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="balcon.jpg">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-item">
+                    <img src="galwel.jpg">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-item">
+                    <img src="sss.jpg">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-item">
+                    <img src="chbr2.jpg">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                
+                <div class="instagram-item">
+                    <img src="ftouch1.jpg">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Banner -->
+    <section class="booking-banner">
+        <div class="container">
+            <h2>Vivez l'Expérience FT-Residence</h2>
+            <p>Réservez dès maintenant votre séjour dans notre établissement et profitez de nos offres exclusives</p>
+            <a href="contact 2.html" class="btn">Réserver Maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>FT-Residence</h3>
+                    <p>L'établissement de référence à Douala pour un séjour d'exception alliant luxe, confort et service personnalisé.</p>
+                    <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61577747315327"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ft.residence/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/FT_Residence"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ft_residence"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="rooms.html">Chambres & Suites</a></li>
+                        <li><a href="restaurant.html">Restaurant</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Spa & Bien-être</a></li>
+                        <li><a href="#">Centre d'Affaires</a></li>
+                        <li><a href="#">Salles d'Événements</a></li>
+                        <li><a href="#">Piscine</a></li>
+                        <li><a href="#">Service de Navette</a></li>
+                        <li><a href="#">Service en Chambre 24h/24</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Fin Goudron Bangue, Kotto</li>
+                        <li><i class="fas fa-phone"></i> +237 675 00 47 43</li>
+                        <li><i class="fas fa-envelope"></i> ftresidence69@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 FT-Residence Douala. Tous droits réservés. | Conçu avec <i class="fas fa-heart"></i> pour votre confort</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image">
+            <div class="lightbox-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="lightbox-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Gallery Filtering
+        const galleryCategories = document.querySelectorAll('.gallery-category');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryCategories.forEach(category => {
+            category.addEventListener('click', () => {
+                // Update active category
+                galleryCategories.forEach(cat => cat.classList.remove('active'));
+                category.classList.add('active');
+                
+                // Filter items
+                const filter = category.textContent;
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'Tout' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.prev-btn');
+        const nextBtn = lightbox.querySelector('.next-btn');
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        
+        let currentImageIndex = 0;
+        
+        // Open lightbox
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateLightboxImage();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Navigation
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        });
+        
+        function updateLightboxImage() {
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+            lightboxImg.alt = galleryImages[currentImageIndex].alt;
+        }
+        
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Video controls functionality
+        const video = document.getElementById('tourVideo');
+        const videoOverlay = document.getElementById('videoOverlay');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const volumeBtn = document.getElementById('volumeBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        
+        // Play/Pause functionality
+        function togglePlayPause() {
+            if (video.paused) {
+                video.play();
+                videoOverlay.style.display = 'none';
+                pauseBtn.style.display = 'flex';
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                pauseBtn.style.display = 'none';
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+        
+        // Event listeners
+        videoOverlay.addEventListener('click', togglePlayPause);
+        pauseBtn.addEventListener('click', togglePlayPause);
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && document.activeElement !== volumeSlider) {
+                e.preventDefault();
+                togglePlayPause();
+            }
+        });
+        
+        // Update progress bar
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Update time display
+            const currentMinutes = Math.floor(video.currentTime / 60);
+            const currentSeconds = Math.floor(video.currentTime % 60);
+            const durationMinutes = Math.floor(video.duration / 60);
+            const durationSeconds = Math.floor(video.duration % 60);
+            
+            timeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+        });
+        
+        // Click on progress bar to seek
+        progressContainer.addEventListener('click', (e) => {
+            const pos = (e.pageX - progressContainer.getBoundingClientRect().left) / progressContainer.offsetWidth;
+            video.currentTime = pos * video.duration;
+        });
+        
+        // Volume control
+        volumeSlider.addEventListener('input', () => {
+            video.volume = volumeSlider.value;
+            volumeBtn.innerHTML = video.volume > 0.5 ? '<i class="fas fa-volume-up"></i>' : 
+                                 video.volume > 0 ? '<i class="fas fa-volume-down"></i>' : 
+                                 '<i class="fas fa-volume-mute"></i>';
+        });
+        
+        volumeBtn.addEventListener('click', () => {
+            if (video.volume > 0) {
+                video.volume = 0;
+                volumeSlider.value = 0;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                video.volume = 1;
+                volumeSlider.value = 1;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
+        
+        // Fullscreen toggle
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                video.parentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            }
+        });
+        
+        // Show pause button when video is playing
+        video.addEventListener('play', () => {
+            pauseBtn.style.display = 'flex';
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+        
+        video.addEventListener('pause', () => {
+            pauseBtn.style.display = 'none';
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        video.addEventListener('ended', () => {
+            videoOverlay.style.display = 'flex';
+            pauseBtn.style.display = 'none';
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        // Initialize video volume
+        video.volume = 1;
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
